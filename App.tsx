@@ -52,6 +52,15 @@ const App: React.FC = () => {
         case CompositionType.CENTER_FOCUS:
             basePrompt += `Place both subjects symmetrically around a central glowing energy source. `;
             break;
+        case CompositionType.V_FORMATION:
+             basePrompt += `Arrange the two subjects in a V-shape formation at the top, looking down towards the center. High angle perspective with dramatic lighting. `;
+             break;
+        case CompositionType.TOP_BOTTOM:
+             basePrompt += `Split the design horizontally. Top half for ${subjectA}, bottom half for ${subjectB}. Distinct color separation and clean layout. `;
+             break;
+        case CompositionType.TEAM_CREST_BACK:
+             basePrompt += `Place the subjects prominently in the foreground. In the background, place massive, semi-transparent team crests/logos looming behind them for a grand scale effect. `;
+             break;
     }
 
     // Style instructions
@@ -74,6 +83,18 @@ const App: React.FC = () => {
         case PosterStyle.GOLD_LUXURY:
             basePrompt += `Luxury aesthetic. Black and Gold color palette, marble textures, golden particles, elegant lighting. `;
             break;
+        case PosterStyle.RETRO_VINTAGE:
+            basePrompt += `90s football poster aesthetic. Grainy texture, vibrant geometric shapes, halftone patterns, VHS glitch effect, retro typography. `;
+            break;
+        case PosterStyle.INK_SPLASH:
+             basePrompt += `Artistic watercolor and ink splash style. Fluid liquid effects blending with the players, paint drips, expressive brush strokes. `;
+             break;
+        case PosterStyle.PAPER_COLLAGE:
+             basePrompt += `Mixed media paper collage style. Ripped paper edges, tape textures, layered paper cutouts, grunge overlay. `;
+             break;
+        case PosterStyle.MINIMALIST_FLAT:
+             basePrompt += `Clean minimalist vector art style. Flat colors, simple geometric shapes, negative space, sharp vector lines, modern typography. `;
+             break;
     }
 
     // Text Instructions (The specific request for "VS" and designed names)
@@ -226,7 +247,7 @@ const App: React.FC = () => {
                             <LayoutTemplate className="w-5 h-5 text-purple-400" />
                             <label className="text-sm font-bold text-white uppercase tracking-wider">Composition (Angle)</label>
                         </div>
-                        <div className="grid grid-cols-1 gap-2">
+                        <div className="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto pr-1">
                             {Object.values(CompositionType).map((comp) => (
                                 <button
                                     key={comp}
@@ -249,7 +270,7 @@ const App: React.FC = () => {
                             <Palette className="w-5 h-5 text-emerald-400" />
                             <label className="text-sm font-bold text-white uppercase tracking-wider">Style & Scenario</label>
                         </div>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto pr-1">
                              {Object.values(PosterStyle).map((s) => (
                                 <button
                                     key={s}

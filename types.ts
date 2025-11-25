@@ -26,6 +26,9 @@ export enum CompositionType {
   DOUBLE_EXPOSURE = 'Double Exposure',
   ACTION_COLLAGE = 'Action Collage',
   CENTER_FOCUS = 'Center Burst',
+  V_FORMATION = 'V-Formation Clash',
+  TOP_BOTTOM = 'Horizontal Split',
+  TEAM_CREST_BACK = 'Crest Background',
 }
 
 export enum PosterStyle {
@@ -35,6 +38,10 @@ export enum PosterStyle {
   BROADCAST_3D = '3D Broadcast',
   ILLUSTRATIVE = 'Comic Illustration',
   GOLD_LUXURY = 'Gold & Luxury',
+  RETRO_VINTAGE = 'Retro 90s',
+  INK_SPLASH = 'Ink & Water',
+  PAPER_COLLAGE = 'Torn Paper',
+  MINIMALIST_FLAT = 'Flat Minimal',
 }
 
 export interface UploadedImage {
